@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,9 +22,9 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     [SerializeField] private bool StartShowBanner = true;
 
     [Header("Rewarded Ad Events")]
-    [SerializeField] private UnityEvent OnAdCompleted = null;
-    [SerializeField] private UnityEvent OnAdSkipped = null;
-    [SerializeField] private UnityEvent OnAdFailed = null;
+    public UnityEvent OnAdCompleted;
+    public UnityEvent OnAdSkipped;
+    public UnityEvent OnAdFailed;
 
     //Reward Events
     public void OnUnityAdsDidError(string message) => Debug.LogError("Internal Unity Error: " + message);
@@ -135,8 +135,24 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         }
     }
 
+    public static void ShowAd(AdType type)
+    {
+        switch (type)
+        {
+            case AdType.NonRewarded:
+                AdManager.Instance.ShowNonRewardedAd();
+                break;
+            case AdType.Rewarded:
+                AdManager.Instance.ShowRewardedAd();
+                break;
+            case AdType.Banner:
+                AdManager.Instance.ShowBannerAd();
+                break;
+        }
+    }
+
     //Used internally. Do not do anything with this.
     private enum Platform { IOS, Android }
 }
 
-public enum AdTypes { Rewarded, NonRewarded, Banner}
+public enum AdType { Rewarded, NonRewarded, Banner}
