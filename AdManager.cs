@@ -33,17 +33,17 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
 
     private string storeID;
 
-#if UNITY_EDITOR
-    private readonly static bool testing = true;
-#else
-    private readonly static bool testing = false;
-#endif
+    #if UNITY_EDITOR
+        private readonly static bool testing = true;
+    #else
+        private readonly static bool testing = false;
+    #endif
 
-#if UNITY_ANDROID
-    private static readonly Platform platform = Platform.Android;
-#elif UNITY_IOS
-    private static readonly Platform platform = Platform.IOS;
-#endif
+    #if UNITY_ANDROID
+        private static readonly Platform platform = Platform.Android;
+    #elif UNITY_IOS
+        private static readonly Platform platform = Platform.IOS;
+    #endif
 
     private void DetermineStoreIDBasedOnPlatform()
     {
