@@ -26,7 +26,7 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     public UnityEvent OnAdSkipped;
     public UnityEvent OnAdFailed;
 
-    //Reward Events
+    //Unity Handled Reward Events
     public void OnUnityAdsDidError(string message) => Debug.LogError("Internal Unity Error: " + message);
     public void OnUnityAdsDidStart(string placementId) { }
     public void OnUnityAdsReady(string placementId) { }
