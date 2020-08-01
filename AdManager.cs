@@ -155,4 +155,4 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     private enum Platform { IOS, Android }
 }
 
-public enum AdType { Rewarded, NonRewarded, Banner}
+public enum AdType { Rewarded, NonRewarded, Banner }
