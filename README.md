@@ -18,5 +18,5 @@ Singleton Ad Manager For Unity
 - You can respond to these events by running `AdManager.Instance.OnAdCompleted.AddListener();`, or assigning a function in the inspector.
 - Use this to reward players for completing ads.
 - When the game is built, testMode will automatically be disabled.
-- The StoreID will change automatically depending on the platform. Dont worry about changing it.
+- The StoreID will change automatically depending on the platform.
 
