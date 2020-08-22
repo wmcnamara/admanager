@@ -31,8 +31,6 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     public void OnUnityAdsDidStart(string placementId) { }
     public void OnUnityAdsReady(string placementId) { }
 
-    private string storeID;
-
     #if UNITY_EDITOR
         private readonly static bool testing = true;
     #else
@@ -45,6 +43,8 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         private static readonly Platform platform = Platform.IOS;
     #endif
 
+    private string storeID;
+    
     private void DetermineStoreIDBasedOnPlatform()
     {
         switch (platform)
