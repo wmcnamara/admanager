@@ -3,7 +3,7 @@ Singleton Ad Manager For Unity
 
 ## Features
 1. Automatic Platform Detection
-2. Simple to set up, and use.
+2. Simple to set up and use.
 3. Dispatches UnityEvents for rewarded ads.
 4. Easy banner configuration
 
